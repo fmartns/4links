@@ -12,9 +12,6 @@ venv/
 # Django specific
 *.log
 local_settings.py
-media/
-staticfiles/
-static/
 
 # Database
 *.sqlite3

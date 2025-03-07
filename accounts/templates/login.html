@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid full-height d-flex vh-100 p-0">
+    <!-- Primeira div (lado esquerdo) -->
+    <div class="col-lg-6 col-12 text-white d-flex align-items-center justify-content-center">
+        <div class="col-md-10">
+                    <div class="card-body">
+                        <h3 class="text-center">Welcome back!</h3>
+                        <p class="text-center">Log in on to your account</p>
+                        <form method="post">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button type="submit" class="btn btn-primary w-100">Entrar</button>
+                            {% for error in form.non_field_errors %}
+                                <p class="error-message"> {{ error }} </p>
+                            {% endfor %}
+                        </form>
+                        {% comment %} <p class="text-center pt-2">OR</p> {% endcomment %}
+
+                    <div>
+                </div>
+            </div>
+        </div> 
+    </div>
+
+    <!-- Segunda div (lado direito) -->
+    <div class="col-lg-6 d-none d-lg-flex align-items-center justify-content-center overflow-hidden position-relative bg-cover" style="background-image: url('{% static 'addons/img/banner-signup-desktop.jpeg' %}');">
+    </div>
+</div>
+{% endblock %}

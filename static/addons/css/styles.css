@@ -1,0 +1,98 @@
+/* Importando a fonte Inter diretamente do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+body {
+    background-color: #121212 !important;
+}
+
+.card {
+    background-color: #121212 !important;
+}
+
+/* Aplicando a fonte Inter (ou fallback para as fontes do sistema caso não esteja disponível) */
+h3 {
+    font-family: 'Inter', Helvetica, Arial, "system-ui", -apple-system, sans-serif !important;
+    font-weight: 800 !important;
+    color: white  !important;
+    font-size: 48px  !important;
+    font-weight: 800  !important;
+    line-height: 1.25  !important;
+    letter-spacing: -1px  !important;
+    text-align: center !important;
+
+}
+
+p {
+    font-family: 'Inter', Helvetica, Arial, "system-ui", -apple-system, sans-serif !important;
+    color: rgb(103 107 95) !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    letter-spacing: 0 !important;
+}
+
+/* Outras regras CSS para seus elementos */
+.container-login {
+    height: 500px !important;
+}
+
+button {
+    border-radius: 4rem !important;
+}
+
+input {
+    border-radius: .5rem !important;
+    background-color: #0a0a0a !important;
+    border: 1px solid transparent !important;
+    padding: 10px 15px !important;
+}
+
+input:hover {
+    box-shadow: 1px 1px 5px 1px rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid white !important;
+}
+
+input:focus-within {
+    box-shadow: none !important;
+    border: 1px solid white !important;
+}
+
+
+/* Estilizar placeholder do input */
+input::placeholder {
+    color: #676B5F !important;
+    font-size: 14px !important;
+}
+
+.btn-primary {
+    background-color: #0A8C7A !important;
+    color: white !important;
+    border: none;
+}
+
+
+.btn-primary:hover {
+    background-color: #0A8C7A !important;
+    color: white !important;
+    box-shadow: none !important;
+}
+
+.btn-primary:focus {
+    box-shadow: none !important;
+}
+
+.error-message {
+    margin-top: 10px !important;
+    color: rgb(191 0 11) !important;
+    font-size: 14px !important;
+}
+
+ul.errorlist {
+    display:none !important;
+}
+
+.bg-cover {
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Garante que a imagem ocupe toda a altura da tela */
+}
