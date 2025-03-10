@@ -64,6 +64,10 @@ input::placeholder {
     font-size: 14px !important;
 }
 
+button {
+    padding: 10px 15px !important;
+}
+
 .btn-primary {
     background-color: #0A8C7A !important;
     color: white !important;
@@ -95,4 +99,34 @@ ul.errorlist {
     background-size: cover;
     background-position: center;
     height: 100vh; /* Garante que a imagem ocupe toda a altura da tela */
+}
+
+.social-button {
+    background-color: #0A8C7A !important;
+    color: white !important;
+    padding: 3px 15px !important;
+    border-radius: 4rem !important;
+    background-color: #0A0A0A !important;
+    border: 1px solid transparent !important;
+}
+
+.social-button:hover {
+    color: white !important;
+    box-shadow: 1px 1px 5px 1px rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid white !important;
+}
+
+.social-button:focus {
+    box-shadow: none !important;
+}
+
+.social-button-text {
+    margin-left: 10px !important;
+    text-decoration: none !important;
+    /* Marcar texto com sublinhado */
+    
+}
+
+.sc-white:hover {
+    color: white !important;
 }

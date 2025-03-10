@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Sign Up" %}{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid full-height d-flex vh-100 p-0">
+    <!-- Primeira div (lado esquerdo) -->
+    <div class="col-lg-6 col-12 text-white d-flex align-items-center justify-content-center">
+        <div class="col-md-10">
+            <div class="card-body">
+                <h3 class="text-center">{% trans "Create your account" %}</h3>
+                <p class="text-center">{% trans "Sign up to get started" %}</p>
+                
+                <form method="post" action="">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-primary w-100">{% trans "Sign Up" %}</button>
+                    {% if form.errors %}
+                            {% for field in form %}
+                                {% for error in field.errors %}
+                                    <p class="error-message">{{ error }}</p>
+                                {% endfor %}
+                            {% endfor %}
+                            {% for error in form.non_field_errors %}
+                                <p class="error-message">{{ error }}</p>
+                            {% endfor %}
+                    {% endif %}
+                </form>
+
+
+                <p class="text-center py-2 m-0">OR</p>
+
+                <a href="{% url 'social:begin' 'google-oauth2' %}" class="text-decoration-none">
+                    <div class="row bg-primary rounded social-button mb-2 mx-0">
+                        <div class="col-2 col-xl-1">
+                            <i class='bx bxl-google bx-sm m-2'></i>
+                        </div>
+                        <div class="col-8">
+                            <p class="m-2 social-button-text"> {% trans "Sign up with Google" %} </p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="{% url 'social:begin' 'github' %}" class="text-decoration-none">
+                    <div class="row bg-primary rounded my-2 social-button mx-0">
+                        <div class="col-2 col-xl-1">
+                            <i class='bx bxl-github bx-sm m-2'></i>
+                        </div>
+                        <div class="col-8">
+                            <p class="m-2 social-button-text"> {% trans "Sign up with GitHub" %} </p>
+                        </div>
+                    </div>
+                </a>
+
+                <p class="text-center py-2 m-0">
+                    {% trans "Already have an account?" %}
+                    <a href="{% url 'login' %}" class="text-decoration-none sc-white text-reset">{% trans "Log in" %}</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Segunda div (lado direito) -->
+    <div class="col-lg-6 d-none d-lg-flex align-items-center justify-content-center overflow-hidden position-relative bg-cover" style="background-image: url('{% static 'addons/img/banner-signup-desktop.jpeg' %}');">
+    </div>
+</div>
+
+{% endblock %}
